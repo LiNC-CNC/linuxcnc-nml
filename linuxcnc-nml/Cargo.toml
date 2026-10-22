@@ -1,0 +1,20 @@
+[package]
+name = "linuxcnc-nml"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "Safe Rust bindings to the LinuxCNC NML command, status, and error channels"
+readme = "README.md"
+documentation = "https://docs.rs/linuxcnc-nml"
+keywords = ["linuxcnc", "cnc", "nml", "hal"]
+categories = ["api-bindings", "hardware-support"]
+
+[lib]
+name = "linuxcnc_nml"
+path = "src/lib.rs"
+
+[dependencies]
+linuxcnc-nml-sys.workspace = true
+thiserror.workspace = true

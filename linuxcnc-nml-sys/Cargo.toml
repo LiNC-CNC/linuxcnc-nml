@@ -1,0 +1,21 @@
+[package]
+name = "linuxcnc-nml-sys"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+build = "build.rs"
+links = "linuxcnc_nml"
+description = "Raw Rust bindings to the LinuxCNC NML command, status, and error channels"
+readme = "README.md"
+documentation = "https://docs.rs/linuxcnc-nml-sys"
+keywords = ["linuxcnc", "cnc", "nml", "ffi"]
+categories = ["api-bindings", "external-ffi-bindings"]
+
+[lib]
+name = "linuxcnc_nml_sys"
+path = "src/lib.rs"
+
+[build-dependencies]
+cc = "1.0"

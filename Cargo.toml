@@ -1,0 +1,17 @@
+[workspace]
+members = [
+    "linuxcnc-nml-sys",
+    "linuxcnc-nml",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-2.0-or-later"
+repository = "https://github.com/LiNC-CNC/linuxcnc-nml"
+rust-version = "1.70"
+
+[workspace.dependencies]
+linuxcnc-nml-sys = { path = "linuxcnc-nml-sys", version = "0.1.0" }
+thiserror = "2.0"
