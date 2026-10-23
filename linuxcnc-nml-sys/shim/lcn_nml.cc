@@ -76,8 +76,15 @@ void copy_text(char *dst, size_t len, const char *src) {
     if (src == nullptr) {
         src = "";
     }
-    std::strncpy(dst, src, len - 1);
-    dst[len - 1] = '\0';
+    // Copy at most len-1 bytes and always terminate. Using memcpy with an
+    // explicit bound avoids GCC's -Wstringop-truncation false positive for
+    // strncpy when the source is exactly as long as the destination.
+    size_t n = std::strlen(src);
+    if (n >= len) {
+        n = len - 1;
+    }
+    std::memmove(dst, src, n);
+    dst[n] = '\0';
 }
 
 void copy_error(char *dst, size_t len, const char *src) {
