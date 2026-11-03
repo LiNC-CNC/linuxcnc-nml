@@ -1,0 +1,11 @@
+# clangd / clang-based analyzers only: the C++ shim includes LinuxCNC's own
+# headers (cmd_msg.hh, emc.hh, emc_nml.hh), which live in the directory
+# `linuxcnc-nml-sys/build.rs` passes to `cc` via LINUXCNC_INCLUDE_DIR. Without
+# this file an editor reports every type in the shim as unknown and suggests
+# deleting the includes - which would break the build it is checking.
+#
+# The default must stay in step with build.rs.
+CompileFlags:
+  Add:
+    - -I/usr/include/linuxcnc
+    - -std=c++17

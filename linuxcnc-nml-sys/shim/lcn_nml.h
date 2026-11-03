@@ -240,6 +240,7 @@ int32_t lcn_nml_set_mode(LcnNmlHandle *handle, int32_t mode);
 int32_t lcn_nml_set_state(LcnNmlHandle *handle, int32_t state);
 int32_t lcn_nml_mdi(LcnNmlHandle *handle, const char *block);
 int32_t lcn_nml_program_open(LcnNmlHandle *handle, const char *path);
+int32_t lcn_nml_program_close(LcnNmlHandle *handle);
 int32_t lcn_nml_auto_run(LcnNmlHandle *handle, int32_t line);
 int32_t lcn_nml_auto_pause(LcnNmlHandle *handle);
 int32_t lcn_nml_auto_resume(LcnNmlHandle *handle);

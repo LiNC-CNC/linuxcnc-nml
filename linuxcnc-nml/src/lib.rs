@@ -210,6 +210,7 @@ impl NmlClient {
                 sys::lcn_nml_reset_interpreter(self.raw.as_ptr())
             },
             Command::Abort => unsafe { sys::lcn_nml_abort(self.raw.as_ptr()) },
+            Command::ProgramClose => unsafe { sys::lcn_nml_program_close(self.raw.as_ptr()) },
             Command::TaskPlanSynch => unsafe { sys::lcn_nml_task_plan_synch(self.raw.as_ptr()) },
             Command::Feedrate(scale) => unsafe { sys::lcn_nml_feedrate(self.raw.as_ptr(), *scale) },
             Command::Rapidrate(scale) => unsafe {

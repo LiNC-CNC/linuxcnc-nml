@@ -309,6 +309,9 @@ extern "C" {
     pub fn lcn_nml_set_state(handle: *mut LcnNmlHandle, state: i32) -> i32;
     pub fn lcn_nml_mdi(handle: *mut LcnNmlHandle, block: *const c_char) -> i32;
     pub fn lcn_nml_program_open(handle: *mut LcnNmlHandle, path: *const c_char) -> i32;
+    /// Close the loaded program (`EMC_TASK_PLAN_CLOSE`): the controller stops
+    /// holding a file to run, so `AutoRun` has nothing to start.
+    pub fn lcn_nml_program_close(handle: *mut LcnNmlHandle) -> i32;
     pub fn lcn_nml_auto_run(handle: *mut LcnNmlHandle, line: i32) -> i32;
     pub fn lcn_nml_auto_pause(handle: *mut LcnNmlHandle) -> i32;
     pub fn lcn_nml_auto_resume(handle: *mut LcnNmlHandle) -> i32;

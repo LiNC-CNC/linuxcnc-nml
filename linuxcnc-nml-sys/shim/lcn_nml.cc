@@ -964,6 +964,11 @@ extern "C" int32_t lcn_nml_mdi(LcnNmlHandle *handle, const char *block) {
     return send_command(handle, message);
 }
 
+extern "C" int32_t lcn_nml_program_close(LcnNmlHandle *handle) {
+    EMC_TASK_PLAN_CLOSE message;
+    return send_command(handle, message);
+}
+
 extern "C" int32_t lcn_nml_program_open(LcnNmlHandle *handle, const char *path) {
     EMC_TASK_PLAN_CLOSE close_message;
     if (send_command(handle, close_message) != 0) {

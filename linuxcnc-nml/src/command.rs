@@ -119,6 +119,10 @@ pub enum Command {
     ResetInterpreter,
     Abort,
     TaskPlanSynch,
+    /// Unload the program the controller is holding (`EMC_TASK_PLAN_CLOSE`).
+    /// `ProgramOpen` already sends this before opening; as a command of its own
+    /// it is what lets an HMI say "nothing is loaded" truthfully.
+    ProgramClose,
 
     Feedrate(f64),
     Rapidrate(f64),
