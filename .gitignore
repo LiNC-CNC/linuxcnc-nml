@@ -1,1 +1,5 @@
 /target
+
+# Compound Engineering local scratch (ce-* skills)
+.context/compound-engineering/
+.compound-engineering/*.local.yaml
